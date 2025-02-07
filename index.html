@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+
+<!--something-->
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Valentine</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        .curtain {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 50%;
+            height: 100%;
+            background-color: #ff69b4;
+            z-index: 1000;
+            transition: transform 1s ease-in-out;
+        }
+        .curtain-left {
+            transform: translateX(0);
+        }
+        .curtain-right {
+            left: 50%;
+            transform: translateX(0);
+        }
+        .curtain.open-left {
+            transform: translateX(-100%);
+        }
+        .curtain.open-right {
+            transform: translateX(100%);
+        }
+    </style>
+    <script>
+        let step = 0;
+
+        function openCurtains() {
+            document.getElementById('curtain-left').classList.add('open-left');
+            document.getElementById('curtain-right').classList.add('open-right');
+        }
+
+        function closeCurtains(callback) {
+            document.getElementById('curtain-left').classList.remove('open-left');
+            document.getElementById('curtain-right').classList.remove('open-right');
+            setTimeout(callback, 1000);
+        }
+
+        function nextQuestion(choice) {
+            const questionText = document.getElementById("question");
+            const btn1 = document.getElementById("btn1");
+            const btn2 = document.getElementById("btn2");
+            const image = document.getElementById("image");
+            
+            document.body.style.backgroundColor = step % 2 === 0 ? "#ffb6c1" : "#ffe4e1";
+            
+            questionText.style.opacity = 0;
+            questionText.style.transform = "translateY(-20px)";
+            setTimeout(() => {
+                if (step === 0) {
+                    questionText.innerHTML = " do you know you're loved?";
+                    btn1.innerHTML = "Yes of course";
+                    btn2.innerHTML = "No, I'm delulu";
+                    btn2.style.display = "inline-block";
+                    image.src = "00-Shiyal.png";
+                    step++;
+                } else if (step === 1) {
+                    if (choice === 1) {
+                        questionText.innerHTML = "Who wouldn't love a princess";
+                        image.src = "princess.png";
+                    } else {
+                        questionText.innerHTML = "WRONG INCORRECT, I obviously still love you";
+                        image.src = "WRONG.png";
+                    }
+                    btn1.innerHTML = "Okay";
+                    btn2.style.display = "none";
+                    step++;
+                } else if (step === 2) {
+                    questionText.innerHTML = "TT, do you know you're beautiful af?";
+                    btn1.innerHTML = "Obviously";
+                    btn2.innerHTML = "No I don't have a mirror";
+                    btn2.style.display = "inline-block";
+                    image.src = "00-Shiyal.png";
+                    step++;
+                } else if (step === 3) {
+                    questionText.innerHTML = choice === 1 ? "I was a lucky mf to ever be w you" : "I'll buy you a mirror";
+                    btn1.innerHTML = "Okay";
+                    btn2.style.display = "none";
+                    image.src = choice === 1 ? "inLove.png" : "mirror.png";
+                    step++;
+                } else if (step === 4) {
+                    questionText.innerHTML = "x, do you have a valentine yet?";
+                    btn1.innerHTML = "Yeah";
+                    btn2.innerHTML = "No";
+                    btn2.style.display = "inline-block";
+                    image.src = "00-Shiyal.png";
+                    step++;
+                } else if (step === 5) {
+                    if (choice === 1) {
+                        questionText.innerHTML = "You go girl, lucky guy huh, I'm a bit jealous lol";
+                        image.src = "squint2.png";
+                    } else {
+                        questionText.innerHTML = "You're always in my mind, Always my valentine";
+                        image.src = "squint1.png";
+                    }
+                    btn1.innerHTML = "Okay";
+                    btn2.style.display = "none";
+                    step++;
+                } else {
+                    questionText.innerHTML = "Happy Valentines Day baby <3";
+                    btn1.innerHTML = "Okay";
+                    btn2.style.display = "none";
+                    image.src = "puppyeyes.png";
+                    step = 0;
+                    closeCurtains(() => {
+                        questionText.innerHTML = "For x (ɔ◔‿◔)ɔ ♥";
+                        btn1.innerHTML = "Okay";
+                        btn2.style.display = "none";
+                        image.src = "00-TT.png";
+                        openCurtains();
+                    });
+                }
+                questionText.style.opacity = 1;
+                questionText.style.transform = "translateY(0)";
+            }, 500);
+        }
+
+        window.onload = () => {
+            setTimeout(openCurtains, 500);
+        };
+    </script>
+</head>
+<body>
+    <div id="curtain-left" class="curtain curtain-left"></div>
+    <div id="curtain-right" class="curtain curtain-right"></div>
+    <div class="container">
+        <img id="image" src="00-TT.png" alt="TT" style="display: block; margin: 0 auto; max-height: 400px;">
+        <h1 id="question">For Tahmina (ɔ◔‿◔)ɔ ♥</h1>
+        <button id="btn1" class="button-55" onclick="nextQuestion(1)">Okay</button>
+        <button id="btn2" class="button-55" onclick="nextQuestion(2)" style="display: none;"></button>
+    </div>
+</body>
+</html>

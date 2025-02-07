@@ -1,0 +1,88 @@
+@import 'https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300';
+
+body {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #ffe4e1;
+    font-family: 'Comic Sans MS', cursive, sans-serif;
+    overflow: hidden;
+    transition: background-color 3s ease-in-out;
+    background-image: linear-gradient(45deg, #ffb6c1 25%, transparent 25%, transparent 75%, #ffb6c1 75%, #ffb6c1),
+                      linear-gradient(45deg, #ffb6c1 25%, transparent 25%, transparent 75%, #ffb6c1 75%, #ffb6c1);
+    background-size: 50px 50px;
+    background-position: 0 0, 25px 25px;
+    animation: scrollBackground 10s linear infinite;
+}
+@keyframes scrollBackground {
+    from {
+        background-position: 0 0, 25px 25px;
+    }
+    to {
+        background-position: 100px 100px, 125px 125px;
+    }
+}
+.container {
+    text-align: center;
+    opacity: 0;
+    transform: translateY(-50px);
+    animation: fadeIn 1.5s ease-out forwards;
+}
+h1 {
+    font-size: 2em;
+    color: #ff69b4;
+    transition: opacity 0.5s, transform 0.5s;
+}
+.btn {
+    padding: 10px 20px;
+    font-size: 1.2em;
+    color: white;
+    background-color: #ff1493;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: transform 0.3s, background-color 0.3s;
+    margin: 10px;
+}
+.btn:hover {
+    transform: scale(1.1);
+    background-color: #ff69b4;
+}
+@keyframes fadeIn {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+.button-55 {
+    position: relative;
+    padding: 1rem 2rem;
+    font-size: 1rem;
+    font-weight: 600;
+    color: white;
+    background: none;
+    border: 2px solid #fb86ce;
+    border-radius: 8px;
+    cursor: pointer;
+    overflow: hidden;
+    transition: all 0.3s ease;
+}
+.button-55::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(#fb86ce 0 0) no-repeat calc(200% - var(--p, 0%)) 100% / 200% var(--p, 0.2em);
+    transition: 0.3s var(--t, 0s), background-position 0.3s calc(0.3s - var(--t, 0s));
+    z-index: -1;
+}
+.button-55:hover {
+    --p: 100%;
+    --t: 0.3s;
+    color: #fff;
+}
