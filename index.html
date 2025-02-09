@@ -58,7 +58,7 @@
             questionText.style.transform = "translateY(-20px)";
             setTimeout(() => {
                 if (step === 0) {
-                    questionText.innerHTML = " do you know you're loved?";
+                    questionText.innerHTML = "Minu do you know you're loved?";
                     btn1.innerHTML = "Yes of course";
                     btn2.innerHTML = "No, I'm delulu";
                     btn2.style.display = "inline-block";
@@ -89,7 +89,7 @@
                     image.src = choice === 1 ? "inLove.png" : "mirror.png";
                     step++;
                 } else if (step === 4) {
-                    questionText.innerHTML = "x, do you have a valentine yet?";
+                    questionText.innerHTML = "Tiye, do you have a valentine yet?";
                     btn1.innerHTML = "Yeah";
                     btn2.innerHTML = "No";
                     btn2.style.display = "inline-block";
@@ -107,13 +107,13 @@
                     btn2.style.display = "none";
                     step++;
                 } else {
-                    questionText.innerHTML = "Happy Valentines Day baby <3";
+                    questionText.innerHTML = "Happy Valentines Day hun <3";
                     btn1.innerHTML = "Okay";
                     btn2.style.display = "none";
                     image.src = "puppyeyes.png";
                     step = 0;
                     closeCurtains(() => {
-                        questionText.innerHTML = "For x (ɔ◔‿◔)ɔ ♥";
+                        questionText.innerHTML = "For Tahmina (ɔ◔‿◔)ɔ ♥";
                         btn1.innerHTML = "Okay";
                         btn2.style.display = "none";
                         image.src = "00-TT.png";
@@ -135,7 +135,7 @@
     <div id="curtain-right" class="curtain curtain-right"></div>
     <div class="container">
         <img id="image" src="00-TT.png" alt="TT" style="display: block; margin: 0 auto; max-height: 400px;">
-        <h1 id="question">For x (ɔ◔‿◔)ɔ ♥</h1>
+        <h1 id="question">For Tahmina (ɔ◔‿◔)ɔ ♥</h1>
         <button id="btn1" class="button-55" onclick="nextQuestion(1)">Okay</button>
         <button id="btn2" class="button-55" onclick="nextQuestion(2)" style="display: none;"></button>
     </div>
