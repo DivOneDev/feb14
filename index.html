@@ -58,7 +58,7 @@
             questionText.style.transform = "translateY(-20px)";
             setTimeout(() => {
                 if (step === 0) {
-                    questionText.innerHTML = "Minu do you know you're loved?";
+                    questionText.innerHTML = "Samara do you know you're loved?";
                     btn1.innerHTML = "Yes of course";
                     btn2.innerHTML = "No, I'm delulu";
                     btn2.style.display = "inline-block";
@@ -89,7 +89,7 @@
                     image.src = choice === 1 ? "inLove.png" : "mirror.png";
                     step++;
                 } else if (step === 4) {
-                    questionText.innerHTML = "Tiye, do you have a valentine yet?";
+                    questionText.innerHTML = "Do you have a valentine yet?";
                     btn1.innerHTML = "Yeah";
                     btn2.innerHTML = "No";
                     btn2.style.display = "inline-block";
@@ -97,7 +97,7 @@
                     step++;
                 } else if (step === 5) {
                     if (choice === 1) {
-                        questionText.innerHTML = "You go girl, lucky guy huh, I'm a bit jealous lol";
+                        questionText.innerHTML = "You go woman, lucky guy huh, I'm a bit jealous lol";
                         image.src = "squint2.png";
                     } else {
                         questionText.innerHTML = "You're always in my mind, Always my valentine";
@@ -113,7 +113,7 @@
                     image.src = "puppyeyes.png";
                     step = 0;
                     closeCurtains(() => {
-                        questionText.innerHTML = "For Tahmina (ɔ◔‿◔)ɔ ♥";
+                        questionText.innerHTML = "For Samara (ɔ◔‿◔)ɔ ♥";
                         btn1.innerHTML = "Okay";
                         btn2.style.display = "none";
                         image.src = "00-TT.png";
@@ -135,7 +135,7 @@
     <div id="curtain-right" class="curtain curtain-right"></div>
     <div class="container">
         <img id="image" src="00-TT.png" alt="TT" style="display: block; margin: 0 auto; max-height: 400px;">
-        <h1 id="question">For Tahmina (ɔ◔‿◔)ɔ ♥</h1>
+        <h1 id="question">For Samara (ɔ◔‿◔)ɔ ♥</h1>
         <button id="btn1" class="button-55" onclick="nextQuestion(1)">Okay</button>
         <button id="btn2" class="button-55" onclick="nextQuestion(2)" style="display: none;"></button>
     </div>
